@@ -5,7 +5,7 @@ description: Escreve o relatório técnico de uma atividade prática da discipli
 
 # Relatório de atividade
 
-1. Rode `git log --oneline` e leia os commits desta atividade.
+1. Rode `git log --format="%h %s%n%b"` e leia os commits desta atividade, incluindo o corpo: é nele que ficam os erros e as mensagens exatas.
 2. Rode `git diff --stat $(git rev-list --max-parents=0 HEAD)..HEAD` para medir o tamanho do que mudou desde o primeiro commit.
 3. Escreva `relatorio.md` com estas seções, nesta ordem:
    - **O que foi pedido** — o enunciado, em duas frases
@@ -17,5 +17,6 @@ description: Escreve o relatório técnico de uma atividade prática da discipli
 
 Regras:
 - Nunca invente um erro que não aconteceu. Se o histórico não mostra falha, escreva que não houve.
+- Em **Ferramentas de IA**, só atribua uma etapa a um agente ou modelo se o histórico ou os arquivos mostrarem isso. Sem evidência, escreva "a confirmar" e inclua a dúvida na pergunta final.
 - Máximo de uma página. Relatório longo não é lido.
 - Português do Brasil, primeira pessoa do singular.
