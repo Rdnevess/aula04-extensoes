@@ -1,20 +1,25 @@
-import shutil
-from pathlib import Path
-
 import pytest
 from mcp.server.mcpserver.exceptions import ToolError
 
 import servidor
 
-ORIGINAL = Path(__file__).parent.parent / "dados" / "turma.csv"
+# Turma da seção 3.2, fixa: os testes não dependem do estado atual de dados/turma.csv,
+# que muda a cada lançamento feito em sessão.
+TURMA_INICIAL = """matricula,nome,n1,n2,n3
+2024001,Ana Maria Silva,8.0,7.5,9.0
+2024002,Jose dos Santos,5.0,4.5,6.0
+2024003,Maria da Conceicao,9.5,9.0,10.0
+2024004,Pedro de Alcantara,6.0,7.0,
+2024005,Carla Nogueira,3.0,4.0,2.5
+"""
 
 
 @pytest.fixture(autouse=True)
 def csv_temporario(tmp_path, monkeypatch):
-    copia = tmp_path / "turma.csv"
-    shutil.copy(ORIGINAL, copia)
-    monkeypatch.setattr(servidor, "ARQUIVO", copia)
-    return copia
+    arquivo = tmp_path / "turma.csv"
+    arquivo.write_text(TURMA_INICIAL, encoding="utf-8", newline="")
+    monkeypatch.setattr(servidor, "ARQUIVO", arquivo)
+    return arquivo
 
 
 def test_media_ponderada_pesos_3_3_4():
