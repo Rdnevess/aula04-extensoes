@@ -10,7 +10,7 @@ Entreguei o `servidor.py` com as 4 ferramentas (`listar_alunos`, `boletim`, `lan
 
 ## O que falhou
 
-- O `.venv` herdado do WSL não executava porque o `pyvenv.cfg` apontava para `/usr/bin`; a mensagem exata não ficou registrada.
+- O `.venv` herdado do WSL não executava porque o `pyvenv.cfg` apontava para `/usr/bin`: `did not find executable at '/usr/bin\python.exe': O sistema não pode encontrar o caminho especificado.`
 - Na análise da turma, o modelo `opencode/big-pickle` usou 6,0 como limite de aprovação em vez de 7,0 e não consultou `diario://regras`.
 - `lancar_nota(2024005, 2, 11)` foi recusado: `nota invalida: 11.0. A nota deve estar entre 0 e 10.` — o CSV ficou intacto.
 - A primeira tentativa de `opencode run` sem `-m` travou 400 s sem saída.
