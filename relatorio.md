@@ -22,6 +22,8 @@ Recriei o `.venv` com `python -m venv --clear .venv`, reinstalei `mcp[cli]` e `p
 
 ## Ferramentas de IA
 
-Usei o OpenCode 1.18.26 com o modelo `opencode/big-pickle` nas sessões de `opencode run` da seção 3.8 e na medição da seção 5.5. O subagente `explore` fez a rodada B da medição, e o subagente `auditor-de-contexto` auditou o `AGENTS.md`. A Skill `relatorio-de-atividade` gerou a v1 (commit 3353ee1) e esta v2, já com o `SKILL.md` corrigido. A autoria da implementação do `servidor.py` e dos arquivos de configuração não está registrada no histórico: a confirmar.
+Usei o Claude Code com o modelo `claude-opus-5-5` para planejar e implementar: o spec e o plano em `docs/superpowers/`, o `servidor.py` e os testes, o `opencode.json`, o `SKILL.md` (v1 e v2), o `auditor-de-contexto.md`, o `medicao.md` e a correção do `AGENTS.md`. Ele também conduziu as verificações (pytest, Inspector CLI, `opencode mcp list`) e disparou as sessões do OpenCode.
 
-Ficou faltando alguma etapa, comando ou erro que eu não tenha registrado? Quem escreveu o `servidor.py` e os arquivos de configuração?
+Usei o OpenCode 1.18.26 com o modelo `opencode/big-pickle` nas sessões da seção 3.8, na medição da seção 5.5, no `/init` que gerou o `AGENTS.md` e na escrita deste relatório. O subagente `explore` fez a rodada B da medição, e o subagente `auditor-de-contexto` auditou o `AGENTS.md`. A Skill `relatorio-de-atividade` gerou a v1 (commit 3353ee1) e esta v2, já com o `SKILL.md` corrigido.
+
+Ficou faltando alguma etapa, comando ou erro que eu não tenha registrado?
